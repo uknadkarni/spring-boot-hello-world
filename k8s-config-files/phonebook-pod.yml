@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: phonebook-pod
+  labels:
+    component: phonebook-microservice
+spec:
+  containers:
+    - name: phonebook-app
+      image: uknadkarni/spring-boot-phonebook:latest
+      ports:
+        - containerPort: 8080

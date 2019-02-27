@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: phonebook-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: phonebook-microservice
+  template:
+    metadata:
+      labels:
+        component: phonebook-microservice
+    spec:
+      containers:
+        - name: phonebook
+          image: uknadkarni/spring-boot-hello-world:latest
+          ports:
+            - containerPort: 8080
+     
